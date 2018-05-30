@@ -18,9 +18,9 @@ func TestSlidingWindow_Add(t *testing.T) {
 
 	w.Add(4)
 	assert.Equal(t, w.cursor, 1, "Expected only three item")
-	assert.Equal(t, len(w.Data), 3, "Array should have 3 items")
-	assert.Equal(t, w.Data, []int{4, 2, 3}, "End data is wrong")
+	assert.Equal(t, len(w.Slice()), 3, "Array should have 3 items")
+	assert.Equal(t, w.Slice(), []int{4, 2, 3}, "End data is wrong")
 
 	w.Add(5)
-	assert.Equal(t, w.Data, []int{4, 5, 3}, "End data is wrong")
+	assert.Equal(t, w.Slice(), []int{4, 5, 3}, "End data is wrong")
 }
